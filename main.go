@@ -5,6 +5,8 @@ import (
 	"log"
 	"net/http"
 	"os"
+
+	"go.uber.org/zap"
 )
 
 func handler(w http.ResponseWriter, r *http.Request) {
@@ -17,7 +19,15 @@ func handler(w http.ResponseWriter, r *http.Request) {
 }
 
 func main() {
-	log.Print("helloworld: starting server...")
+
+	logger, err := zap.NewProduction()
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	sugar := logger.Sugar()
+
+	sugar.Info("helloworld: starting server...")
 
 	http.HandleFunc("/", handler)
 
@@ -26,6 +36,6 @@ func main() {
 		port = "8080"
 	}
 
-	log.Printf("helloworld: listening on port %s", port)
+	sugar.Info("helloworld: listening on port %s", port)
 	log.Fatal(http.ListenAndServe(fmt.Sprintf(":%s", port), nil))
 }

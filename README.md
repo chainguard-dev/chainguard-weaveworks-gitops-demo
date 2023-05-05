@@ -68,7 +68,7 @@ gitsign show
 }
 ```
 
-Chainguard Enforce for git
+# Chainguard Enforce for git
 
 https://edu.chainguard.dev/chainguard/chainguard-enforce/chainguard-enforce-github/getting-started-enforce-github/
 

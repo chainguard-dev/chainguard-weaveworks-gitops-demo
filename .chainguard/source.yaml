@@ -12,5 +12,6 @@ spec:
         url: https://rekor.sigstore.dev
     - key:
 #         Allow commits signed by GitHub.
-        - kms: https://github.com/web-flow.gpg
-        - kms: https://github.com/murillodigital.gpg
+        kms: https://github.com/web-flow.gpg
+    - key:
+        kms: https://github.com/murillodigital.gpg

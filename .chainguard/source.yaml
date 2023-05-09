@@ -15,3 +15,5 @@ spec:
         kms: https://github.com/web-flow.gpg
     - key:
         kms: https://github.com/murillodigital.gpg
+    - key:
+        kms: https://github.com/strongjz.gpg 

@@ -31,4 +31,4 @@ attest:
 	cosign attest --predicate <(gitsign show) $(shell cat ko.images)
 
 verify:
-	 cosign verify --certificate-identity=james.strong@chainguard.dev --certificate-oidc-issuer=https://accounts.google.com $(cat ko.images) -o json  | jq -r .[0].optional.Bundle.Payload.body | base64 -d | jq -r .
+	 cosign verify --certificate-identity=james.strong@chainguard.dev --certificate-oidc-issuer=https://accounts.google.com $(shell cat ko.images) -o json  | jq -r .[0].optional.Bundle.Payload.body | base64 -d | jq -r .

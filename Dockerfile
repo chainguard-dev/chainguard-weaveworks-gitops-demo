@@ -23,6 +23,4 @@ COPY --from=build-stage /demo /demo
 
 EXPOSE 8080
 
-USER nonroot:nonroot
-
 ENTRYPOINT ["/demo"]

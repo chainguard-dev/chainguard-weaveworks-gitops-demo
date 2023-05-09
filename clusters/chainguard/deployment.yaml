@@ -21,7 +21,7 @@ spec:
     spec:
       containers:
         - name: gitops
-          image: ghcr.io/chainguard-dev/chainguard-weaveworks-gitops-demo:docker
+          image: ghcr.io/chainguard-dev/chainguard-weaveworks-gitops-demo:secure
           imagePullPolicy: Always
           ports:
             - name: http
